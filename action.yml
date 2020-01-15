@@ -1,5 +1,5 @@
 name: 'PHP CodeSniffer Check'
-description: 'Helps to detect violations of coding standards with phpcs'
+description: 'PHPCS checker with annotations out of the box'
 author: 'Ilya Chekalsky'
 inputs:
   enable_warnings:

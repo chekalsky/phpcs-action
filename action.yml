@@ -1,0 +1,14 @@
+name: 'PHP CodeSniffer Check'
+description: 'PHPCS checker with annotations out of the box'
+author: 'Ilya Chekalsky'
+inputs:
+  enable_warnings:
+    description: 'Enable checking for warnings (-w)'
+    required: false
+    default: ''
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+branding:
+  icon: 'check-circle'
+  color: 'green'

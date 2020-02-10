@@ -1,4 +1,4 @@
-name: 'PHP CodeSniffer Check'
+name: 'PHP_CodeSniffer Check'
 description: 'PHPCS checker with annotations out of the box'
 author: 'Ilya Chekalsky'
 inputs:

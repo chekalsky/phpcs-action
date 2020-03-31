@@ -29,8 +29,8 @@ Eventually you could also check for warnings.
         ...
         - name: PHPCS check
           uses: chekalsky/phpcs-action@v1
-            with:
-              enable_warnings: true
+          with:
+            enable_warnings: true
 ```
 
 You probably would like to have [configuration file](https://github.com/squizlabs/PHP_CodeSniffer/wiki/Advanced-Usage#using-a-default-configuration-file) for PHP_CodeSniffer in order to make it work as you like.

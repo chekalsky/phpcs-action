@@ -7,11 +7,11 @@ echo "::add-matcher::${RUNNER_TEMP}/_github_workflow/problem-matcher.json"
 if [ -z "${INPUT_ENABLE_WARNINGS}" ] || [ "${INPUT_ENABLE_WARNINGS}" = "false" ]; then
     echo "Check for warnings disabled"
 
-    phpcs --report=checkstyle
+    phpcs -n --report=checkstyle
 else
     echo "Check for warnings enabled"
 
-    phpcs -w --report=checkstyle
+    phpcs --report=checkstyle
 fi
 
 status=$?

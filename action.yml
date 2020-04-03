@@ -6,6 +6,14 @@ inputs:
     description: 'Enable checking for warnings (-w)'
     required: false
     default: ''
+  phpcs_bin_path:
+    description: 'Path to phpcs bin'
+    required: false
+    default: 'phpcs'
+  path_to_scan:
+    description: 'Path to scan'
+    required: false
+    default: '.'
 runs:
   using: 'docker'
   image: 'Dockerfile'

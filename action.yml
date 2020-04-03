@@ -6,6 +6,10 @@ inputs:
     description: 'Enable checking for warnings (-w)'
     required: false
     default: ''
+  phpcs_bin_path:
+    description: 'Path to phpcs binary'
+    required: false
+    default: 'phpcs'
 runs:
   using: 'docker'
   image: 'Dockerfile'

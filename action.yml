@@ -1,5 +1,5 @@
-name: 'PHP_CodeSniffer Check'
-description: 'PHPCS checker with annotations out of the box'
+name: 'PHP_CodeSniffer Check with Annotations'
+description: 'PHPCS checker with auto annotations out of the box'
 author: 'Ilya Chekalsky'
 inputs:
   enable_warnings:
@@ -18,5 +18,5 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
 branding:
-  icon: 'check-circle'
-  color: 'green'
+  icon: 'zap'
+  color: 'purple'

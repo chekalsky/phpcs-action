@@ -59,5 +59,5 @@ It will also change phpcs `installed_paths` setting, but will prefer local phpcs
         - name: PHPCS check
           uses: chekalsky/phpcs-action@v1
           with:
-            installed_paths: '/github/workspace/vendor/phpcompatibility/php-compatibility'
+            installed_paths: '${{ github.workspace }}/vendor/phpcompatibility/php-compatibility'
 ```

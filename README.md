@@ -34,3 +34,30 @@ Eventually you could also check for warnings.
 ```
 
 You probably would like to have [configuration file](https://github.com/squizlabs/PHP_CodeSniffer/wiki/Advanced-Usage#using-a-default-configuration-file) for PHP_CodeSniffer in order to make it work as you like.
+
+#### `installed_paths` and `Dealerdirect/phpcodesniffer-composer-installer`
+If you are using custom standards, you have two options on how to customize this action.
+
+1. Just use [special library](https://github.com/Dealerdirect/phpcodesniffer-composer-installer) which will find and activate all the standards you have in your `composer.json`.
+
+It will also change phpcs `installed_paths` setting, but will prefer local phpcs install. That means we should use local phpcs binary in the action. To do so run action with certain parameter.
+
+```yaml
+        ...
+        - name: Install dependencies
+          run: composer install --dev --prefer-dist --no-progress --no-suggest
+        - name: PHPCS check
+          uses: chekalsky/phpcs-action@v1
+          with:
+            phpcs_bin_path: './vendor/bin/phpcs'
+```
+
+2. Change the `installed_paths` directly by using another option.
+
+```yaml
+        ...
+        - name: PHPCS check
+          uses: chekalsky/phpcs-action@v1
+          with:
+            installed_paths: '${{ github.workspace }}/vendor/phpcompatibility/php-compatibility'
+```

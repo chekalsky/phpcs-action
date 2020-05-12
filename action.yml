@@ -14,6 +14,22 @@ inputs:
     description: 'Setting the installed standard paths'
     required: false
     default: ''
+  only_changed_files:
+    description: 'Run linter on changed files only'
+    required: false
+    default: ''
+  token:
+    description: >
+      Personal access token (PAT) used to fetch the repository. The PAT is stored
+      in memory and used to ask the Github API for a list of files changed in
+      the PR.
+
+      We recommend using a service account with the least permissions necessary.
+      Also when generating a new PAT, select the least scopes necessary.
+
+      [Learn more about creating and using encrypted secrets](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/creating-and-using-encrypted-secrets)
+    required: false
+    default: ${{ github.token }}
 runs:
   using: 'docker'
   image: 'Dockerfile'

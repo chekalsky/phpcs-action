@@ -1,4 +1,4 @@
-FROM php:latest as builder
+FROM php:8.1 as builder
 
 # Install build dependencies
 RUN set -eux \
@@ -16,7 +16,7 @@ RUN set -eux \
 	&& chmod +x /phpcs.phar \
 	&& mv /phpcs.phar /usr/bin/phpcs
 
-FROM php:latest as production
+FROM php:8.1 as production
 
 COPY --from=builder /usr/bin/phpcs /usr/bin/phpcs
 

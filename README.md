@@ -18,9 +18,10 @@ jobs:
       name: PHPCS
       runs-on: ubuntu-latest
       steps:
-        - uses: actions/checkout@v2
+        - uses: actions/checkout@v3
+
         - name: PHPCS check
-          uses: chekalsky/phpcs-action@v1
+          uses: chekalsky/phpcs-action@v2
 ```
 
 Eventually you could also check for warnings.
@@ -28,7 +29,7 @@ Eventually you could also check for warnings.
 ```yaml
         ...
         - name: PHPCS check
-          uses: chekalsky/phpcs-action@v1
+          uses: chekalsky/phpcs-action@v2
           with:
             enable_warnings: true
 ```
@@ -46,18 +47,19 @@ It will also change phpcs `installed_paths` setting, but will prefer local phpcs
         ...
         - name: Install dependencies
           run: composer install --dev --prefer-dist --no-progress --no-suggest
+
         - name: PHPCS check
-          uses: chekalsky/phpcs-action@v1
+          uses: chekalsky/phpcs-action@v2
           with:
             phpcs_bin_path: './vendor/bin/phpcs'
 ```
 
-2. Change the `installed_paths` directly by using another option.
+1. Change the `installed_paths` directly by using another option.
 
 ```yaml
         ...
         - name: PHPCS check
-          uses: chekalsky/phpcs-action@v1
+          uses: chekalsky/phpcs-action@v2
           with:
             installed_paths: '${{ github.workspace }}/vendor/phpcompatibility/php-compatibility'
 ```
